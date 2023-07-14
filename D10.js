@@ -103,15 +103,16 @@ console.log(deleteOne("macchina", true));
 console.log("ESERCIZIO 5");
 
 const onlyLetters = (myString) => {
-	const contString = myString;
-
-	const position = contString.search(/[0-9]/g);
-	console.log(position);
-	if (position > 0) {
-		contString.slice(7, 8);
+	const contnum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+	const cont = myString.split("");
+	const contString = [];
+	for (let i = 0; i < cont.length; i++) {
+		for (let j = 0; j < contnum; j++) {
+			if (myString[i] == contnum[j]) {
+				contString.push(myString[i]);
+			}
+		}
 	}
-
-	console.log(contString);
 	console.log(contString);
 };
 
@@ -172,34 +173,38 @@ console.log(rollTheDices(3));
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-// console.log("ESERCIZIO 8");
-// const howManyDays = function (paramData) {
+console.log("ESERCIZIO 9");
+const howManyDays = function (paramData) {
+	const date = new Date();
+	const myData = new Date(paramData);
+	const result = Math.floor((date.getTime() - myData.getTime()) / (1000 * 3600 * 24));
 
-// };
+	return result + " giorni";
+};
 
-// console.log(howManyDays("20/10/2023"));
+console.log(howManyDays("07/12/2023"));
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
-// console.log("ESERCIZIO 10");
-// const isTodayMyBirthday = function (birthDate) {
-// 	const contData = birthDate.split("/");
-// 	const giorno = contData[0];
+console.log("ESERCIZIO 10");
 
-// 	contData[0] = contData[1];
-// 	contData[0] = giorno;
+const isTodayMyBirthday = function (myBirthDate) {
+	const date = new Date();
+	const birthDate = new Date(myBirthDate);
 
-// 	const birthDay = contData.join("/");
-// 	const date = new Date();
+	if (
+		date.getDate() === birthDate.getDate() &&
+		date.getMonth() === birthDate.getMonth() &&
+		date.getFullYear() === birthDate.getFullYear()
+	) {
+		console.log("Tanti auguri");
+	} else {
+		console.log("non è ancora il mio complenano");
+	}
+};
 
-// 	const birthDates = new Date(birthDate);
-// 	if (date.getMonth() === birthDates.getMonth()) {
-// 		console.log("ciao");
-// 	}
-// };
-
-// isTodayMyBirthday("14/07/23");
+isTodayMyBirthday("07/14/23");
 
 // Arrays & Oggetti
 
