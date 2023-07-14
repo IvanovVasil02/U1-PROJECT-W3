@@ -103,20 +103,19 @@ console.log(deleteOne("macchina", true));
 console.log("ESERCIZIO 5");
 
 const onlyLetters = (myString) => {
-	const contnum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+	const contnum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 	const cont = myString.split("");
 	const contString = [];
 	for (let i = 0; i < cont.length; i++) {
-		for (let j = 0; j < contnum; j++) {
-			if (myString[i] == contnum[j]) {
-				contString.push(myString[i]);
-			}
+		if (!contnum.includes(cont[i])) {
+			contString.push(cont[i]);
 		}
 	}
-	console.log(contString);
+
+	console.log(contString.join(""));
 };
 
-onlyLetters("I have 4 dogs");
+onlyLetters("I have 4 dogs 7");
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
