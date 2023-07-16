@@ -457,7 +457,7 @@ console.log(searchAndDivide(movies, "Flies"));
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
-console.log("ESERCIZIO 18");
+console.log("ESERCIZIO 19");
 const removeIndex = function (movieList, num) {
 	movieList.splice(num, 1);
 	return movieList;
@@ -470,19 +470,20 @@ console.log(removeIndex(movies, 2));
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+console.log("ESERCIZIO 20");
 
 const selectContainer = document.querySelector("#container");
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
-
+console.log("ESERCIZIO 21");
 const container = document.querySelectorAll("td");
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
-
+console.log("ESERCIZIO 22");
 const getValues = function () {
 	const td = document.querySelectorAll("td");
 	for (let i = 0; i < td.length; i++) {
@@ -493,7 +494,7 @@ const getValues = function () {
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-
+console.log("ESERCIZIO 23");
 const changeBackground = (color) => {
 	const body = document.querySelector("body");
 	body.style.background = color;
@@ -502,7 +503,7 @@ const changeBackground = (color) => {
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+console.log("ESERCIZIO 24");
 const addLi = () => {
 	const ul = document.querySelector("#myList");
 	const li = document.createElement("li");
@@ -513,7 +514,7 @@ const addLi = () => {
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-
+console.log("ESERCIZIO 25");
 const addElement = function () {
 	const ul = document.querySelector("#myList");
 	const li = document.createElement("li");
@@ -524,6 +525,7 @@ const addElement = function () {
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+console.log("ESERCIZIO 16");
 const changeStyle = function () {
 	const tr = document.querySelector("tr");
 	tr.classList.add("test");
@@ -542,6 +544,18 @@ const changeStyle = function () {
   ***
 
 */
+console.log("ESERCIZIO 27");
+console.log("ESERCIZIO 27");
+const halfTree = (num) => {
+	const si = "*";
+	let cont = [];
+	for (let i = 0; i < num; i++) {
+		cont.push(si);
+		console.log(cont.join(" "));
+	}
+};
+
+halfTree(3);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -554,9 +568,46 @@ const changeStyle = function () {
   *****
 
 */
+console.log("ESERCIZIO 28");
+const tree = (num) => {
+	const si = "*";
+	let cont = [];
+	let stop = num - 1;
+
+	for (let i = 0; i < stop; i++) {
+		cont.push(" ");
+	}
+	cont.push(si);
+
+	for (let i = 0; i < num; i++) {
+		console.log(cont.join(" "));
+		stop -= 1;
+		cont.splice(stop, 1, si);
+		cont.push("*");
+	}
+};
+tree(3);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+console.log("ESERCIZIO 29");
+const isItPrime = (num) => {
+	let result = 0;
+
+	for (let i = 2; i < num; i++) {
+		if (num % i === 0) {
+			result += 1;
+		}
+	}
+
+	if (result > 1) {
+		console.log("non è un numero primo");
+	} else {
+		console.log("è un numero primo");
+	}
+};
+
+isItPrime(29);
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
